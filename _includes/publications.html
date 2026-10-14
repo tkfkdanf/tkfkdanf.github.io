@@ -19,14 +19,14 @@
     {% if pubs.highlight %}{% capture strong_name %}<strong class="me">{{ pubs.highlight }}</strong>{% endcapture %}{% assign authors = authors | replace: pubs.highlight, strong_name %}{% endif %}
     <li class="pub" data-type="{{ p.type | slugify }}">
       <div class="pub-body">
-        <h3 class="pub-title">{% if p.link %}<a href="{{ p.link }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+        {% assign plink = p.link %}{% if plink == nil and p.doi %}{% assign plink = p.doi | prepend: 'https://doi.org/' %}{% endif %}
+        <h3 class="pub-title">{% if plink %}<a href="{{ plink }}" target="_blank" rel="noopener">{{ p.title }}<i class="fa-solid fa-arrow-up-right-from-square pub-ext" aria-hidden="true"></i></a>{% else %}{{ p.title }}{% endif %}</h3>
         <p class="pub-authors">{{ authors }}</p>
         <p class="pub-venue">{% if p.type %}<span class="badge badge-soft">{{ p.type }}</span>{% endif %}{% if p.status %}<span class="badge badge-status">{{ p.status }}</span>{% endif %}<em>{{ p.conference }}</em></p>
-        {% if p.pdf or p.code or p.doi %}
+        {% if p.pdf or p.code %}
         <div class="pub-links">
           {% if p.pdf %}<a href="{{ p.pdf }}" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i>PDF</a>{% endif %}
           {% if p.code %}<a href="{{ p.code }}" target="_blank" rel="noopener"><i class="fa-solid fa-code"></i>Code</a>{% endif %}
-          {% if p.doi %}<a href="https://doi.org/{{ p.doi }}" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i>DOI</a>{% endif %}
         </div>
         {% endif %}
       </div>

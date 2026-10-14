@@ -89,17 +89,18 @@ publications:
     conference: IEEE/ACM International Symposium on Low Power Electronics and Design (ISLPED), 2026
     year: 2026
     type: Conference
+    doi: 10.1145/3816440.3818562
+  - title: "Timing-Driven Hierarchical Gate Sizing with Reinforcement Learning"
+    authors: Kijung Kong, Geonhyeong Park, and Heechun Park
+    conference: Korean Conference on Semiconductors (KCS), 2026
+    year: 2026
+    type: Domestic
   - title: "Insulated Gate Bipolar Transistor Junction Temperature Estimation Technology for Traction Inverters Using a Thermal Model"
     authors: Kijung Kong, Junhwan Choi, Geonhyeong Park, Seungmin Baek, Sungeun Ju, and Yongsu Han
     conference: Electronics, Vol. 14, No. 5, 999, 2025
     year: 2025
     type: Journal
     doi: 10.3390/electronics14050999
-  - title: "Timing-Driven Hierarchical Gate Sizing with Reinforcement Learning"
-    authors: Kijung Kong, Geonhyeong Park, and Heechun Park
-    conference: Korean Conference on Semiconductors (KCS), 2026
-    year: 2026
-    type: Domestic
   - title: "Efficient 3D IC CTS Flow with Commercial EDA Tools"
     authors: Geonhyeong Park and Heechun Park
     conference: Korean Conference on Semiconductors (KCS), 2025
@@ -112,7 +113,8 @@ publications:
   #   year: 2027
   #   type: Conference   # Conference | Journal | Domestic
   #   status: Accepted   # 출판 전이면 표시 (선택)
-  #   link / pdf / code / doi: (선택)
+  #   doi: 10.xxxx/...   # 적으면 제목을 눌렀을 때 논문 페이지로 이동 (또는 link: 주소)
+  #   pdf / code: (선택)
 
 awards:
   title: Honors & Awards

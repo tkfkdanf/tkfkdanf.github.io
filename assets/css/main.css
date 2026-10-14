@@ -303,6 +303,8 @@ a.chip:hover { color: var(--accent); border-color: var(--accent); text-decoratio
 .pub-title { font-size: 16px; font-weight: 650; }
 .pub-title a { color: var(--text); }
 .pub-title a:hover { color: var(--accent); }
+.pub-ext { font-size: .62em; margin-left: .45em; color: var(--text-3); vertical-align: .15em; }
+.pub-title a:hover .pub-ext { color: var(--accent); }
 .pub-authors { color: var(--text-2); font-size: 14.5px; margin-top: 4px; }
 .pub-authors .me { color: var(--text); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .pub-venue { color: var(--text-3); font-size: 14px; margin-top: 4px; }
