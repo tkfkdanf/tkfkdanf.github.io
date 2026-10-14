@@ -9,7 +9,7 @@ lang: ko
 
 # Theme
 accent: unist         # unist | indigo | blue | teal | green | orange | rose | violet | slate
-color_mode: auto      # auto | light | dark  (방문자가 토글로 바꿀 수 있음)
+color_mode: light     # light | dark | auto(OS 설정 따름) — 방문자가 버튼으로 바꿀 수 있음
 sidebar_position: left # left | right
 animations: true      # 스크롤 시 섹션 등장 애니메이션
 

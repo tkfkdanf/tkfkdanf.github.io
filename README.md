@@ -55,11 +55,6 @@ cd 내아이디.github.io
 # _data/data.yml 수정 후
 git add -A && git commit -m "Update CV" && git push
 ```
-- push 할 때 Password 칸에는 GitHub 비밀번호가 아니라 **토큰**을 넣습니다.
-- 토큰 만들기: <https://github.com/settings/tokens/new> → `repo` 체크 → Generate
-  (Fine-grained 토큰을 쓸 때는 해당 저장소를 선택하고 **Contents: Read and write** 권한을 꼭 추가)
-- push 후 GitHub Contributors에 내가 안 보이면 커밋 이메일을
-  <https://github.com/settings/emails> 에 등록·인증하세요.
 
 ### 내 컴퓨터에서 미리보기 (선택)
 ```bash
