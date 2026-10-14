@@ -1,0 +1,14 @@
+{% assign languages = site.data.data.profile.languages %}
+{% if languages %}
+<div class="side-block">
+  <h2 class="side-title">{{ languages.title }}</h2>
+  <ul class="lang-list">
+    {% for l in languages.info %}
+    <li>
+      <div class="lang-row"><span>{{ l.idiom }}</span>{% if l.level %}<small>{{ l.level }}</small>{% endif %}</div>
+      {% if l.percent %}<div class="meter"><span style="--w: {{ l.percent }}%"></span></div>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

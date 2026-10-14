@@ -1,0 +1,129 @@
+#
+# 이력서의 모든 내용은 이 파일에서 관리합니다.
+# 섹션을 숨기려면 해당 블록을 통째로 주석 처리하거나 삭제하세요.
+# 출처: SeDA Lab 홈페이지 (https://sites.google.com/view/unist-seda)
+#
+
+# ---------- 왼쪽 프로필 카드 ----------
+profile:
+  about: False    # 사이드바 하단 "How to use?" 안내 표시 여부
+
+  name: Geonhyeong Park
+  tagline: MS&PhD Candidate, EE, UNIST
+  avatar: profile.jpg # /assets/images/ 안의 사진 파일명 (비워두면 이니셜 표시)
+  location: Ulsan, Republic of Korea
+  available:      # 예: Open to internships (비워두면 숨김)
+
+  # Contact & links (비워두면 화면에 안 나옴)
+  email: gh.park@unist.ac.kr
+  linkedin: geonhyeong-park-486439396 # LinkedIn 아이디 또는 전체 주소
+  scholar: 7N8EjwQAAAAJ # Google Scholar 주소의 user= 값
+  website: https://sites.google.com/view/unist-seda
+  website_label: SeDA Lab, UNIST
+  github:         # GitHub 아이디
+  orcid:          # 0000-0000-0000-0000
+  timezone: Asia/Seoul
+
+  languages:
+    title: Languages
+    info:
+    - idiom: Korean
+      level: Native
+      percent: 100
+    - idiom: English
+      level: Intermediate
+      percent: 60
+
+# ---------- 본문 ----------
+about:
+  title: About
+  summary: |
+    Geonhyeong Park received the B.S. degree in Electrical Engineering from Myongji University,
+    Korea, in 2025. He is currently pursuing the integrated M.S. and Ph.D. degree in Electrical
+    Engineering at the Ulsan National Institute of Science and Technology (UNIST), Ulsan, Korea,
+    working with Prof. Heechun Park in the Semiconductor Design Automation (SeDA) Lab.
+    His research focuses on physical design for 3D ICs, particularly clock tree synthesis,
+    and on applying AI to electronic design automation.
+  research_interests:
+  - 3D ICs
+  - Clock Tree Synthesis (CTS)
+  - AI for EDA
+
+education:
+  title: Education
+  info:
+  - degree: M.S.–Ph.D. Integrated Program in Electrical Engineering
+    university: Semiconductor Design Automation (SeDA) Lab, UNIST, Republic of Korea
+    time: Mar 2025 - Present
+    details: |
+      Advisor: Prof. Heechun Park
+  - degree: B.S. in Electrical Engineering
+    university: Myongji University, Republic of Korea
+    time: Feb 2025
+
+experience:
+  title: Research Experience
+  info:
+  - role: Undergraduate Visiting Researcher
+    time: Sep 2024 - Feb 2025
+    company: "SeDA Lab, UNIST (Advisor: Prof. Heechun Park)"
+
+publications:
+  title: Publications
+  highlight: Geonhyeong Park # 저자 목록에서 강조할 이름
+  papers:
+  - title: "A Comprehensive Clock Tree Synthesis with Useful Skew for 3D ICs"
+    authors: Geonhyeong Park, Ikkyum Kim, and Heechun Park
+    conference: IEEE/ACM Asia and South Pacific Design Automation Conference (ASP-DAC), 2027
+    year: 2027
+    type: Conference
+    status: Accepted
+  - title: "True-3D Clock Tree Synthesis: Exploring the 3D Design Space"
+    authors: Geonhyeong Park and Heechun Park
+    conference: IEEE International Conference on Computer Design (ICCD), 2026
+    year: 2026
+    type: Conference
+    status: Accepted
+  - title: "BS-CSO: Backside-Assisted Clock-Signal Co-Optimization Framework"
+    authors: Ikkyum Kim, Geonhyeong Park, and Heechun Park
+    conference: IEEE/ACM International Symposium on Low Power Electronics and Design (ISLPED), 2026
+    year: 2026
+    type: Conference
+  - title: "Timing-Driven Hierarchical Gate Sizing with Reinforcement Learning"
+    authors: Kijung Kong, Geonhyeong Park, and Heechun Park
+    conference: Korean Conference on Semiconductors (KCS), 2026
+    year: 2026
+    type: Domestic
+  - title: "Efficient 3D IC CTS Flow with Commercial EDA Tools"
+    authors: Geonhyeong Park and Heechun Park
+    conference: Korean Conference on Semiconductors (KCS), 2025
+    year: 2025
+    type: Domestic
+  # 형식:
+  # - title: Paper title
+  #   authors: "Geonhyeong Park, Co-author, and Heechun Park"
+  #   conference: Venue, Year
+  #   year: 2027
+  #   type: Conference   # Conference | Journal | Domestic
+  #   status: Accepted   # 출판 전이면 표시 (선택)
+  #   link / pdf / code / doi: (선택)
+
+awards:
+  title: Honors & Awards
+  list:
+  - title: NRF Master's Student Research Grant (석사과정생연구장려금지원사업)
+    org: National Research Foundation of Korea (NRF) · 1-year project
+    time: Sep 2026
+
+skills:
+  title: Skills
+  groups:
+  - name: EDA Tools
+    items: [Cadence Innovus, Cadence Genus, Synopsys ICC2, Synopsys PrimeTime]
+  - name: Programming
+    items: [Python, C/C++, Tcl]
+  - name: Tools & OS
+    items: [Linux, Git]
+
+footer: >
+  Built with Jekyll · Inspired by <a href="https://github.com/sharu725/online-cv" target="_blank" rel="noopener">online-cv</a>

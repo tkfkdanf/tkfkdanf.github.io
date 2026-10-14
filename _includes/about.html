@@ -1,0 +1,13 @@
+{% assign about = site.data.data.about %}
+{% if about %}
+<section class="section reveal" id="about">
+  {% include section-title.html icon="fa-user" title=about.title %}
+  <div class="prose lead">{{ about.summary | markdownify }}</div>
+  {% if about.research_interests %}
+  <div class="interests">
+    <h3 class="sub-title">Research Interests</h3>
+    <div class="chips chips-accent">{% for t in about.research_interests %}<span class="chip">{{ t }}</span>{% endfor %}</div>
+  </div>
+  {% endif %}
+</section>
+{% endif %}

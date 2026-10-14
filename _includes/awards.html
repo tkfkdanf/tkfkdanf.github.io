@@ -1,0 +1,20 @@
+{% assign awards = site.data.data.awards %}
+{% if awards and awards.list.size > 0 %}
+<section class="section reveal" id="awards">
+  {% include section-title.html icon="fa-trophy" title=awards.title count=awards.list.size %}
+  {% if awards.intro %}<div class="prose intro">{{ awards.intro | markdownify }}</div>{% endif %}
+  <ul class="award-list">
+    {% for a in awards.list %}
+    <li class="award">
+      <span class="award-icon"><i class="fa-solid fa-medal"></i></span>
+      <div class="award-body">
+        <h3 class="award-title">{% if a.link %}<a href="{{ a.link }}" target="_blank" rel="noopener">{{ a.title }}</a>{% else %}{{ a.title }}{% endif %}</h3>
+        {% if a.org %}<p class="tl-sub">{{ a.org }}</p>{% endif %}
+        {% if a.details %}<div class="prose">{{ a.details | markdownify }}</div>{% endif %}
+      </div>
+      {% if a.time %}<span class="badge">{{ a.time }}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

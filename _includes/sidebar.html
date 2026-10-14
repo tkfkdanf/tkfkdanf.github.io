@@ -1,0 +1,31 @@
+{% assign sb = site.data.data.profile %}
+<aside class="sidebar" id="top">
+  <div class="sidebar-card">
+    <div class="profile">
+      <div class="avatar-wrap">
+        {% if sb.avatar %}
+        <img class="avatar" src="{{ '/assets/images/' | append: sb.avatar | relative_url }}" alt="{{ sb.name }}" width="112" height="112">
+        {% else %}
+        {% assign words = sb.name | remove: '[' | remove: ']' | split: ' ' %}
+        <span class="avatar avatar-initials" aria-hidden="true">{% for w in words limit: 2 %}{{ w | slice: 0 | upcase }}{% endfor %}</span>
+        {% endif %}
+      </div>
+      {% if sb.name %}<h1 class="name">{{ sb.name }}</h1>{% endif %}
+      {% if sb.tagline %}<p class="tagline">{{ sb.tagline }}</p>{% endif %}
+      {% if sb.location %}<p class="location"><i class="fa-solid fa-location-dot"></i>{{ sb.location }}</p>{% endif %}
+      {% if sb.available %}<span class="status"><span class="status-dot"></span>{{ sb.available }}</span>{% endif %}
+    </div>
+
+    {% include contact.html %}
+
+    {% include language.html %}
+    {% include interests.html %}
+
+    {% if sb.about %}
+    <div class="side-block about">
+      <h2 class="side-title">How to use?</h2>
+      <p>Edit <code>_data/data.yml</code> and push. Press <kbd>⌘/Ctrl</kbd>+<kbd>P</kbd> to save as PDF.</p>
+    </div>
+    {% endif %}
+  </div>
+</aside>

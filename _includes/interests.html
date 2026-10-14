@@ -1,0 +1,11 @@
+{% assign interests = site.data.data.profile.interests %}
+{% if interests %}
+<div class="side-block">
+  <h2 class="side-title">{{ interests.title }}</h2>
+  <div class="chips">
+    {% for i in interests.info %}
+      {% if i.link %}<a class="chip" href="{{ i.link }}" target="_blank" rel="noopener">{{ i.item }}</a>{% else %}<span class="chip">{{ i.item }}</span>{% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

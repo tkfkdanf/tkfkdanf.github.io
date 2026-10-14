@@ -1,0 +1,28 @@
+# 모든 이력 내용은 _data/data.yml 에서 수정합니다.
+
+# Site Settings
+title: Curriculum Vitae
+url: "https://tkfkdanf.github.io"
+baseurl: "" # 저장소 이름으로 배포하면 '/저장소이름' 으로 변경
+description: A modern, data-driven resume theme for Jekyll
+lang: ko
+
+# Theme
+accent: unist         # unist | indigo | blue | teal | green | orange | rose | violet | slate
+color_mode: auto      # auto | light | dark  (방문자가 토글로 바꿀 수 있음)
+sidebar_position: left # left | right
+animations: true      # 스크롤 시 섹션 등장 애니메이션
+
+# Analytics (Google Analytics 4 측정 ID, 비워두면 비활성화)
+analytics:
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+encoding: "utf-8"
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -1,0 +1,21 @@
+{% assign experiences = site.data.data.experience %}
+{% if experiences and experiences.info.size > 0 %}
+<section class="section reveal" id="experience">
+  {% include section-title.html icon="fa-briefcase" title=experiences.title %}
+  <ol class="timeline">
+    {% for x in experiences.info %}
+    <li class="tl-item{% if x.current %} is-current{% endif %}">
+      <div class="tl-head">
+        <div>
+          <h3 class="tl-title">{{ x.role }}</h3>
+          <p class="tl-sub">{{ x.company }}</p>
+        </div>
+        <span class="badge">{{ x.time }}</span>
+      </div>
+      {% if x.details %}<div class="prose">{{ x.details | markdownify }}</div>{% endif %}
+      {% if x.tags %}<div class="chips chips-sm">{% for t in x.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}

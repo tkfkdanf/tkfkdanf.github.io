@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}" data-accent="{{ site.accent | default: 'indigo' }}" data-mode="{{ site.color_mode | default: 'auto' }}">
+{% include head.html %}
+<body class="sidebar-{{ site.sidebar_position | default: 'left' }}{% if site.animations != false %} has-anim{% endif %}">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  {% include topbar.html %}
+
+  <div class="layout">
+    {% include sidebar.html %}
+
+    <main class="main" id="main">
+      {{ content }}
+    </main>
+  </div>
+
+  {% include footer.html %}
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  {% if site.analytics %}{% include analytics.html %}{% endif %}
+</body>
+</html>

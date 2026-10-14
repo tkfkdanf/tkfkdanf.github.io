@@ -1,0 +1,30 @@
+{% assign sb = site.data.data.profile %}
+<div class="side-block">
+  <h2 class="side-title">Contact</h2>
+  <ul class="contact-list">
+    {% if sb.email %}
+    <li>
+      <a href="mailto:{{ sb.email }}"><i class="fa-solid fa-envelope"></i><span>{{ sb.email }}</span></a>
+      <button class="copy-btn" type="button" data-copy="{{ sb.email }}" aria-label="Copy email" title="Copy"><i class="fa-regular fa-copy"></i></button>
+    </li>
+    {% endif %}
+    {% if sb.linkedin %}{% assign li = sb.linkedin %}{% unless li contains '://' %}{% assign li = li | prepend: 'https://www.linkedin.com/in/' %}{% endunless %}
+    <li><a href="{{ li }}" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a></li>{% endif %}
+    {% if sb.scholar %}{% assign gs = sb.scholar %}{% unless gs contains '://' %}{% assign gs = gs | prepend: 'https://scholar.google.com/citations?user=' %}{% endunless %}
+    <li><a href="{{ gs }}" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i><span>Google Scholar</span></a></li>{% endif %}
+    {% if sb.website %}<li><a href="{{ sb.website }}" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i><span>{% if sb.website_label %}{{ sb.website_label }}{% else %}{{ sb.website | remove: 'https://' | remove: 'http://' | remove_last: '/' }}{% endif %}</span></a></li>{% endif %}
+    {% if sb.timezone %}<li><span class="plain"><i class="fa-solid fa-clock"></i><span class="local-time" data-tz="{{ sb.timezone }}">{{ sb.timezone }}</span></span></li>{% endif %}
+  </ul>
+
+  {% if sb.github or sb.orcid or sb.twitter or sb.bluesky or sb.mastodon or sb.gitlab %}
+  <div class="social">
+    {% if sb.github %}<a href="https://github.com/{{ sb.github }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>{% endif %}
+    {% if sb.orcid %}<a href="https://orcid.org/{{ sb.orcid }}" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><i class="fa-brands fa-orcid"></i></a>{% endif %}
+    {% if sb.twitter %}<a href="https://x.com/{{ sb.twitter | remove: '@' }}" target="_blank" rel="noopener" aria-label="X" title="X"><i class="fa-brands fa-x-twitter"></i></a>{% endif %}
+    {% if sb.bluesky %}<a href="https://bsky.app/profile/{{ sb.bluesky | remove: '@' }}" target="_blank" rel="noopener" aria-label="Bluesky" title="Bluesky"><i class="fa-brands fa-bluesky"></i></a>{% endif %}
+    {% if sb.mastodon %}<a href="{{ sb.mastodon }}" target="_blank" rel="me noopener" aria-label="Mastodon" title="Mastodon"><i class="fa-brands fa-mastodon"></i></a>{% endif %}
+    {% if sb.gitlab %}<a href="https://gitlab.com/{{ sb.gitlab }}" target="_blank" rel="noopener" aria-label="GitLab" title="GitLab"><i class="fa-brands fa-gitlab"></i></a>{% endif %}
+    {% if sb['stack-overflow'] %}<a href="https://stackoverflow.com/users/{{ sb['stack-overflow'] }}" target="_blank" rel="noopener" aria-label="Stack Overflow" title="Stack Overflow"><i class="fa-brands fa-stack-overflow"></i></a>{% endif %}
+  </div>
+  {% endif %}
+</div>

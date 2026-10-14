@@ -1,0 +1,20 @@
+{% assign education = site.data.data.education %}
+{% if education %}
+<section class="section reveal" id="education">
+  {% include section-title.html icon="fa-graduation-cap" title=education.title %}
+  <ol class="timeline">
+    {% for e in education.info %}
+    <li class="tl-item">
+      <div class="tl-head">
+        <div>
+          <h3 class="tl-title">{{ e.degree }}</h3>
+          <p class="tl-sub">{{ e.university }}</p>
+        </div>
+        <span class="badge">{{ e.time }}</span>
+      </div>
+      {% if e.details %}<div class="prose">{{ e.details | markdownify }}</div>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}

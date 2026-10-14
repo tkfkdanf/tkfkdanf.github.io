@@ -1,0 +1,45 @@
+{% assign sb = site.data.data.profile %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title | default: sb.name }}</title>
+  <meta name="description" content="{{ site.description | default: sb.tagline | escape }}">
+  <meta name="author" content="{{ sb.name }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{{ sb.name }} — {{ sb.tagline }}">
+  <meta property="og:description" content="{{ site.description | escape }}">
+  {% if sb.avatar %}<meta property="og:image" content="{{ '/assets/images/' | append: sb.avatar | absolute_url }}">{% endif %}
+
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+
+  <!-- Apply saved color mode before paint to avoid flashing -->
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var saved = localStorage.getItem('cv-mode');
+        if (saved) document.documentElement.setAttribute('data-mode', saved);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  {% if sb.name %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ sb.name | jsonify }},
+    "jobTitle": {{ sb.tagline | jsonify }}{% if sb.email %},
+    "email": {{ sb.email | prepend: 'mailto:' | jsonify }}{% endif %}{% if sb.website %},
+    "url": {{ sb.website | jsonify }}{% endif %}
+  }
+  </script>
+  {% endif %}
+</head>

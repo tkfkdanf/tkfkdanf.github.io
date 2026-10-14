@@ -1,0 +1,41 @@
+{% assign pubs = site.data.data.publications %}
+{% if pubs %}
+<section class="section reveal" id="publications">
+  {% include section-title.html icon="fa-book-open" title=pubs.title count=pubs.papers.size %}
+  {% if pubs.intro %}<div class="prose intro">{{ pubs.intro | markdownify }}</div>{% endif %}
+
+  {% if pubs.papers.size > 0 %}
+  {% assign types = pubs.papers | map: 'type' | compact | uniq %}
+  {% if types.size > 1 %}
+  <div class="filters" role="group" aria-label="Filter publications">
+    <button class="filter is-active" type="button" data-filter="all">All</button>
+    {% for t in types %}<button class="filter" type="button" data-filter="{{ t | slugify }}">{{ t }}</button>{% endfor %}
+  </div>
+  {% endif %}
+
+  <ol class="pub-list" reversed>
+    {% for p in pubs.papers %}
+    {% assign authors = p.authors %}
+    {% if pubs.highlight %}{% capture strong_name %}<strong class="me">{{ pubs.highlight }}</strong>{% endcapture %}{% assign authors = authors | replace: pubs.highlight, strong_name %}{% endif %}
+    <li class="pub" data-type="{{ p.type | slugify }}">
+      <div class="pub-body">
+        <h3 class="pub-title">{% if p.link %}<a href="{{ p.link }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+        <p class="pub-authors">{{ authors }}</p>
+        <p class="pub-venue">{% if p.type %}<span class="badge badge-soft">{{ p.type }}</span>{% endif %}{% if p.status %}<span class="badge badge-status">{{ p.status }}</span>{% endif %}<em>{{ p.conference }}</em></p>
+        {% if p.pdf or p.code or p.doi %}
+        <div class="pub-links">
+          {% if p.pdf %}<a href="{{ p.pdf }}" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i>PDF</a>{% endif %}
+          {% if p.code %}<a href="{{ p.code }}" target="_blank" rel="noopener"><i class="fa-solid fa-code"></i>Code</a>{% endif %}
+          {% if p.doi %}<a href="https://doi.org/{{ p.doi }}" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i>DOI</a>{% endif %}
+        </div>
+        {% endif %}
+      </div>
+      {% if p.year %}<span class="pub-year">{{ p.year }}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="empty"><i class="fa-regular fa-file-lines"></i>Publications will be listed here.</p>
+  {% endif %}
+</section>
+{% endif %}

@@ -1,0 +1,5 @@
+{% assign footer = site.data.data.footer %}
+<footer class="footer">
+  {% if footer %}<p>{{ footer }}</p>{% endif %}
+  <p class="muted">© {{ 'now' | date: '%Y' }} {{ site.data.data.profile.name }} · Last updated {{ site.time | date: '%Y-%m-%d' }}</p>
+</footer>
