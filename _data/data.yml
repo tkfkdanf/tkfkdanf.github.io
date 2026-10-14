@@ -89,6 +89,12 @@ publications:
     conference: IEEE/ACM International Symposium on Low Power Electronics and Design (ISLPED), 2026
     year: 2026
     type: Conference
+  - title: "Insulated Gate Bipolar Transistor Junction Temperature Estimation Technology for Traction Inverters Using a Thermal Model"
+    authors: Kijung Kong, Junhwan Choi, Geonhyeong Park, Seungmin Baek, Sungeun Ju, and Yongsu Han
+    conference: Electronics, Vol. 14, No. 5, 999, 2025
+    year: 2025
+    type: Journal
+    doi: 10.3390/electronics14050999
   - title: "Timing-Driven Hierarchical Gate Sizing with Reinforcement Learning"
     authors: Kijung Kong, Geonhyeong Park, and Heechun Park
     conference: Korean Conference on Semiconductors (KCS), 2026
